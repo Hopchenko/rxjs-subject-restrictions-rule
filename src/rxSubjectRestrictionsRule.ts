@@ -33,13 +33,9 @@ class RxBehaviorSubjectWalker extends Lint.RuleWalker {
     }
 
     public isRxObject(propertyConstructorText: string) {
-        let isIncludes = false;
-        for (let i = 0; i < SUBJECTS.length; i++) {
-            if (propertyConstructorText.includes(SUBJECTS[i])) {
-                isIncludes = true;
-            }
-        }
-        return isIncludes;
+        return SUBJECTS.some((subj): any => {
+            return propertyConstructorText.includes(subj)
+        });
     }
 
     protected checkAccessModifier(node: ts.PropertyDeclaration) {

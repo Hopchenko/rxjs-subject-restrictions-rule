@@ -1,5 +1,5 @@
 {
-  "name": "tslint-rxjs-subject-restricitons-rule",
+  "name": "tslint-rxjs-subject-restricitions-rule",
   "version": "1.0.0",
   "description": "Custom tslint rule for linting rxjs subjects usage in your code",
   "main": "dist/rxSubjectRestrictionsRule.js",
