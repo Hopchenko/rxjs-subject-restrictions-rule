@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Custom tslint rule for linting rxjs subjects usage in your code",
   "main": "dist/rxSubjectRestrictionsRule.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Hopchenko/rxjs-subject-restrictions-rule.git"
+  },
   "scripts": {
     "build": "tsc",
     "tslint-example": "tsc && tslint -r example/tslint.json example/*.ts",
