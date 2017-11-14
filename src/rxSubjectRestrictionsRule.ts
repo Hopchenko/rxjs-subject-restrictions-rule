@@ -6,6 +6,8 @@ import { hasModifier } from 'tsutils';
 export class Rule extends Lint.Rules.AbstractRule {
     public static MODIFIER_FAILURE_STRING = 'Public access modifier for RxJS Subject is not allowed';
     public static NAMING_FAILURE_STRING = 'The name of RxJS Subject variable must ends with "$"';
+    public static NO_MODIFIER_FAILURE_STRING = 'RxJS Subject must have access modifier';
+
 
     public static metadata: Lint.IRuleMetadata = {
         ruleName: 'rx-subject-restrictions',
@@ -43,11 +45,13 @@ class RxBehaviorSubjectWalker extends Lint.RuleWalker {
         const constructorDeclarationStartAt = propertyText.lastIndexOf('new ');
         const propertyConstructorText = propertyText.slice(constructorDeclarationStartAt);
         const isPublic = hasModifier(node.modifiers, ts.SyntaxKind.PublicKeyword);
-
-        if (isPublic && this.isRxObject(propertyConstructorText)) {
-            this.addFailureAtNode(node, Rule.MODIFIER_FAILURE_STRING)
-        } else {
-            return;
+        if (!hasModifier(node.modifiers, ts.SyntaxKind.PublicKeyword, ts.SyntaxKind.ProtectedKeyword, ts.SyntaxKind.StaticKeyword, ts.SyntaxKind.PrivateKeyword) && this.isRxObject(propertyConstructorText)) {
+            this.addFailureAtNode(node, Rule.NO_MODIFIER_FAILURE_STRING);
+            if (isPublic && this.isRxObject(propertyConstructorText)) {
+                this.addFailureAtNode(node, Rule.MODIFIER_FAILURE_STRING)
+            } else {
+                return;
+            }
         }
     }
 

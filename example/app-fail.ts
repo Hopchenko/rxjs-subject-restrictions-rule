@@ -1,7 +1,7 @@
-import { Subject } from "rxjs";
+import { BehaviorSubject, Subject } from "rxjs";
 
 class Blabla {
-    public isActive = new Subject();
+    csrData: BehaviorSubject<{}> = new BehaviorSubject(null);
     public asdasd = new function () {
 
     }()
