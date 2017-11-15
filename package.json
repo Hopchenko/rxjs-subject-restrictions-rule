@@ -1,6 +1,6 @@
 {
   "name": "tslint-rxjs-subject-restrictions-rule",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom tslint rule for linting rxjs subjects usage in your code",
   "main": "dist/rxSubjectRestrictionsRule.js",
   "repository": {

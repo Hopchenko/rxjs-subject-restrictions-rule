@@ -1,8 +1,16 @@
 # RxJs Subject Restrictions rule
+
 > Custom rule for tslint
+
+## NPM
+[www.npmjs.com/package/tslint-rxjs-subject-restrictions-rule](https://www.npmjs.com/package/tslint-rxjs-subject-restrictions-rule)
+
+## Description
 
 Public access modifier for RxJS Subject is not allowed'.
 The name of RxJS Subject variable must ends with "$".
+
+## Example
 
 *Right:*
 ```ts

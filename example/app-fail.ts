@@ -1,8 +1,6 @@
 import { BehaviorSubject, Subject } from "rxjs";
 
 class Blabla {
-    csrData: BehaviorSubject<{}> = new BehaviorSubject(null);
-    public asdasd = new function () {
-
-    }()
+    data: BehaviorSubject<{}> = new BehaviorSubject(null);
+    public frData: BehaviorSubject<{}> = new BehaviorSubject(null);
 }
