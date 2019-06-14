@@ -1,6 +1,15 @@
 {
   "rulesDirectory": "../dist/",
+  "linterOptions": {
+    "exclude": [
+      "bin",
+      "node_modules"
+    ]
+  },
   "rules": {
-    "rx-subject-restrictions": true
+    "rx-subject-restrictions": [
+      true,
+      "allow-public"
+    ]
   }
 }
